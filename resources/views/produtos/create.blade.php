@@ -17,28 +17,9 @@
 				   id="notes" class="form-control"></textarea>
 		</div>
 		<div class="form-group">
-			<label for="name">Marca</label>
-			<input type="text" name="marca"
-				   id="marca" class="form-control">
-				   <div class="form-group">
-		</div>
-		<div class="form-group">
-			<label for="name">Modelo</label>
-			<input type="text" name="modelo"
-				   id="modelo" class="form-control">
-				   <div class="form-group">
-		</div>
-		<div class="form-group">
-			<label for="name">Preço</label>
-			<input type="text" name="preço"
-				   id="preço" class="form-control">
-				   <div class="form-group">
-		</div>
-
-		<div class="form-group">
-			<label for="name">Link</label>
-			<input type="text" name="link"
-				   id="link" class="form-control">
+			<label for="state">Estado</label>
+			<input type="text" name="state"
+				   id="state" class="form-control">
 				   <div class="form-group">
 		</div>
 

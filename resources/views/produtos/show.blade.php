@@ -19,6 +19,11 @@
 				   id="notes" class="form-control">{{$product['notes']}}</textarea>
 		</div>
 		<div class="form-group">
+			<label for="state">Estado</label>
+			<textarea name="state"
+				   id="state" class="form-control">{{$product['state']}}</textarea>
+		</div>
+		<div class="form-group">
 			<button type="submit" 
 					class="btn btn-primary">Atualizar</button>
 		</div>
