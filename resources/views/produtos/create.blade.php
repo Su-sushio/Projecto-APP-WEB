@@ -4,7 +4,7 @@
 
 <div class="container">
 	<h1> Novo Produto </h1>
-	<form method="POST" action="{{route('product.store')}}">
+	<form method="POST" action="{{route('produtos.store')}}">
 		@csrf()
 		<div class="form-group">
 			<label for="name">Nome</label>
@@ -22,20 +22,20 @@
 				   id="marca" class="form-control">
 				   <div class="form-group">
 		</div>
-		<div class="form~group">
+		<div class="form-group">
 			<label for="name">Modelo</label>
 			<input type="text" name="modelo"
 				   id="modelo" class="form-control">
 				   <div class="form-group">
 		</div>
-		<div class="form~group">
+		<div class="form-group">
 			<label for="name">Preço</label>
 			<input type="text" name="preço"
 				   id="preço" class="form-control">
 				   <div class="form-group">
 		</div>
 
-		<div class="form~group">
+		<div class="form-group">
 			<label for="name">Link</label>
 			<input type="text" name="link"
 				   id="link" class="form-control">
