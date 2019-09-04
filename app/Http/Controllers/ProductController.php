@@ -10,10 +10,10 @@ class ProductController extends Controller
   
     public function index()
     {
-        $produto= Product::paginate(10);
-        return view('Product.index')->with('product',$produto);
+        $product= Product::paginate(10);
+        return view('produtos.index')->with('produtos',$product);
     }
-   public function store(Request $request)
+   /*public function store(Request $request)
     {
         //
        
@@ -35,5 +35,5 @@ class ProductController extends Controller
     public function destroy(Produto $produto)
     {
         
-    }
+    }*/
 }
