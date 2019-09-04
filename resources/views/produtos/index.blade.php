@@ -7,8 +7,7 @@
 			<tr>
 				<th>Produto</th>
 				<th>Notas</th>
-				<th>Link</th>
-				<th>Preço</th>
+				<th>Estado</th>
 			</tr>
 		</thead>
 	</table>

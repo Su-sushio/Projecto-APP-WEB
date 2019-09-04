@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 use App\Product;
 
-use Illuminate\Http\Eloquent\ModelRequest;
+
+
+use Illuminate\Http\Request;
+
 
 class ProductController extends Controller
 {
@@ -21,15 +24,15 @@ class ProductController extends Controller
         return view ('produtos.create');
 
     }
-    public function store()
+    public function store(Request $request)
     {
        $produto = new Product();
-      
+       $produto->fill($request->all());
        $produto->save();
        return redirect()->route('produtos.index');
        
     }
-    
+
     public function show(produto $produto)
     {
         
