@@ -8,16 +8,28 @@ use Illuminate\Http\Eloquent\ModelRequest;
 class ProductController extends Controller
 {
   
+
     public function index()
     {
         $product= Product::paginate(10);
         return view('produtos.index')->with('produtos',$product);
     }
-   /*public function store(Request $request)
+   
+
+    public function create()
     {
-        //
+        return view ('produtos.create');
+
+    }
+    public function store()
+    {
+       $produto = new Product();
+      
+       $produto->save();
+       return redirect()->route('produtos.index');
        
     }
+    
     public function show(produto $produto)
     {
         
@@ -35,5 +47,5 @@ class ProductController extends Controller
     public function destroy(Produto $produto)
     {
         
-    }*/
+    }
 }
