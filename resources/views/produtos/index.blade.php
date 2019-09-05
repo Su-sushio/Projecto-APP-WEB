@@ -7,7 +7,7 @@
 			<tr>
 				<th>Produto</th>
 				<th>Notas</th>
-				<th>Estado</th>
+				<th colspan="5">Estado</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -34,6 +34,6 @@
 <div>
 	<a href="{{route('produtos.create')}}" class="btn btn-primary">Criar Produto</a>
 </div>
-
 </div>
+
 @endsection

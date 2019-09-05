@@ -20,8 +20,10 @@
 		</div>
 		<div class="form-group">
 			<label for="state">Estado</label>
-			<textarea name="state"
-				   id="state" class="form-control">{{$product['state']}}</textarea>
+			<select name="state" id="state" class="form-control">{{$product['state']}}>
+  				<option value="Em Curso">Em Curso</option>
+  				<option value="Terminado">Terminado</option>
+  			</select>
 		</div>
 		<div class="form-group">
 			<button type="submit" 
