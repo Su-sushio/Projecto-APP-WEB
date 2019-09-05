@@ -18,10 +18,12 @@
 		</div>
 		<div class="form-group">
 			<label for="state">Estado</label>
-			<input type="text" name="state"
-				   id="state" class="form-control">
-				   <div class="form-group">
+			<select name="state" id="state" class="form-control">
+  				<option value="Em Curso">Em Curso</option>
+  				<option value="Terminado">Terminado</option>
+  			</select>
 		</div>
+
 
 		<button type="submit" class="btn btn-primary">Guardar</button>
 	</form>
