@@ -32,13 +32,7 @@
 
 	<div>
 		<h2>Produto</h2>
-		<ul>
-			@foreach ($product['product'] as $product)
-			<li> 
-				<a href="#">{{$product['name']}} </a>
-			</li>
-			@endforeach
-		</ul>
+		
 	</div>
 </div>
 @endsection
