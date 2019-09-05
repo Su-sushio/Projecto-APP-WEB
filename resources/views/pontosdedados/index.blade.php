@@ -9,13 +9,9 @@
 		<thead>
 			<tr>
 				<th>Nome</th>
-				<th>Notas</th>
-				<th>Estado</th>
+				<th>Tipo</th>
 			</tr>
 		</thead>
 	</table>
 </div>
-
-
 @endsection
-
