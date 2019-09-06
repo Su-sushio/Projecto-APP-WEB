@@ -13,12 +13,15 @@ class DataPoint extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('datapoint', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('type');
-            $table->bigIncrements('product_id');
-              });
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->timestamps();
+
+        });
     }
 
     /**

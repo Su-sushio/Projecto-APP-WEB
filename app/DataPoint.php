@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataPoint extends Model
 {
+    protected $table ='datapoint';
     protected $fillable = [
         "id",
-        "nome",
-        "tipo",
-        "id_produto"
+        "name",
+        "type",
+        "product_id"
     ];
 }
+
+

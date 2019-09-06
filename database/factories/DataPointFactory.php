@@ -8,8 +8,8 @@ use Faker\Generator as Faker;
 $factory->define(DataPoint::class, function (Faker $faker) {
     return [
         "id"=>"",
-        "nome"=>"",
-        "id_produto"=>"",
-                  
+        "name"=>"",
+        "type"=>"",
+        "product_id"=>""
     ];
 });
