@@ -56,4 +56,4 @@ class DataPointController extends Controller
         return redirect()->route('pontodedados.index');
     }
 }
-}
+
