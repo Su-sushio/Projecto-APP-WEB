@@ -5,6 +5,9 @@
 
 
 <div class="container">
+<div>
+		<h1>Lista de Produtos</h1>
+</div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -33,7 +36,7 @@
 			@endforeach
 		</tbody>
 	</table>
-
+{{$produtos->links()}}
 <div>
 	<a href="{{route('produtos.create')}}" class="btn btn-primary">Criar Produto</a>
 </div>

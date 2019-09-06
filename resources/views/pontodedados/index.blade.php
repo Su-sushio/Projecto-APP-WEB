@@ -12,6 +12,14 @@
 				<th>Tipo</th>
 			</tr>
 		</thead>
+		<tbody>
+		@foreach($pontodedados as $pontodedado)
+			<tr>
+				<td>{{$pontodedado['name']}}</td>
+				<td>{{$pontodedado['type']}}</td>
+			</tr>
+		@endforeach
+		</tbody>
 	</table>
 </div>
 @endsection

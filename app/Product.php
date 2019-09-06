@@ -10,5 +10,9 @@ class Product extends Model
       "state",
     ];
 
+    public function  datapoints(){
+      return $this->hasMany('App\DataPoint');
+
+    }
    
 }

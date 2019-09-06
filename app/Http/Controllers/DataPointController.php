@@ -1,11 +1,12 @@
 <?php
- 
+
 namespace App\Http\Controllers;
+
 use App\DataPoint;
- 
+use App\Product;
 use Illuminate\Http\Eloquent\ModelRequest;
- 
-use Illuminate\Http\Request;
+
+use Illuminate\Http\Request;;
 
 
 class DataPointController extends Controller
@@ -15,53 +16,21 @@ class DataPointController extends Controller
         $datapoint= DataPoint::paginate(10);
         return view('pontodedados.index')->with('pontodedados',$datapoint);
     }
-   
 
-<<<<<<< HEAD
-   
-}
-=======
-    public function create()
-    {
-        return view ('pontodedados.create');
+    public function create ($id){
 
+        $product = Product::find($id);
+        return view ('pontodedados.create')->with('product',$product);
     }
 
-
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-       $produto = new DataPoint();
-       $produto->fill($request->all());
-       $produto->save();
-       return redirect()->route('pontodedados.index');
-       
-    }
-
-    public function show(DataPoint $produto)
-    {
-        return view('pontodedados.show')->with('product', $produto);
-    }
-
-
-
-    public function edit(DataPoint $produto)
-    {
-        //
-    }
-    
-    public function update(Request $request, DataPoint $produto)
-    {
-      $produto->fill($request->all());
-      $produto->save();
-
-       return redirect()->route('pontodedados.index');
-    }
-    
-    public function destroy(DataPoint $produto)
-    {
-        $produto->delete();
-        return redirect()->route('pontodedados.index');
+        $product = Product::find($id);
+       $pontodedados = new DataPoint();
+       $pontodedados->fill($request->all());
+       $pontodedados->product_id=$id;
+       $pontodedados->save();
+       return redirect()->route('produtos.show',$product);
     }
 }
 
->>>>>>> 8b44d34b60545b509208061f420d09a0151fe594

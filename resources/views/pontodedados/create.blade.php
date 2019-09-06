@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 	<h1> Ponto de Dados</h1>
-	<form method="POST" action="{{route('produtos.store')}}">
+	<form method="POST" action="{{route('produtos.pontodedados',$product)}}">
 		@csrf()
 		<div class="form-group">
 			<label for="name">Nome</label>
