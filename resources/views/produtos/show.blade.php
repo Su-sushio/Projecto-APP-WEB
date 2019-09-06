@@ -41,4 +41,3 @@
 	</div>
 </div>
 @endsection
-@include('pontosdedados.create')
