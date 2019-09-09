@@ -67,7 +67,34 @@
 
 <div>
 	<a href="{{route('produtos.pontodedados.create',$product)}}" class="btn btn-primary">Criar Ponto de Dados</a>
-</div>
-</div>
+</div><br>
 
+
+<div>
+<div class="container">
+<div>
+		<h1>Opções</h1>
+</div>
+<table class="table">
+		<thead>
+			<tr>
+			@foreach($product->datapoints as $pontodedado)
+				<td>{{$pontodedado['name']}}</td>
+			@endforeach
+			</tr >
+		</thead>
+		<tbody>
+		
+			<tr>
+			@foreach($product->datapoints as $pontodedado)
+				<td></td>
+			@endforeach
+			</tr>
+		</tbody>
+</table>
+</div>
+</div>
+<div>
+	<a href="" class="btn btn-primary">Criar Nova Opção</a>
+</div>
 @endsection
