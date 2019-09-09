@@ -24,11 +24,4 @@ Route::resource('pontodedados','DataPointController');
 
 Route::get('/produtos/{id}/pontodedados','DataPointController@create')->name('produtos.pontodedados.create');
 
-<<<<<<< HEAD
 Route::post('/produtos/{id}/pontodedados','DataPointController@store')->name('produtos.pontodedados');
-
-
-
-=======
-Route::post('/produtos/{id}/pontodedados','DataPointController@store')->name('produtos.pontodedados');
->>>>>>> 973489254d2a6b497d1d06dbbfe1077f84a8d9dc

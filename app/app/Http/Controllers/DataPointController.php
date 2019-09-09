@@ -25,37 +25,12 @@ class DataPointController extends Controller
 
     public function store(Request $request,$id)
     {
-       $product = Product::find($id);
+        $product = Product::find($id);
        $pontodedados = new DataPoint();
        $pontodedados->fill($request->all());
        $pontodedados->product_id=$id;
        $pontodedados->save();
        return redirect()->route('produtos.show',$product);
     }
-
-    public function show(DataPoint $pontodedado)
-    {
-        return view('pontodedados.show')->with('datapoint', $pontodedado);
-    }
-
-    public function destroy(DataPoint $pontodedado)
-    {
-        $pontodedado->delete();
-        $product = Product::findOrFail($pontodedado -> product_id);
-
-        return view('produtos.show')->with('product', $product);
-              
-    }
-
-
-    public function update(Request $request, DataPoint $pontodedado)
-    {
-      $pontodedado->fill($request->all());
-      $pontodedado->save();
-
-      $product = Product::findOrFail($pontodedado -> product_id);
-
-      return view('produtos.show')->with('product', $product);
-    }
-   
 }
+
