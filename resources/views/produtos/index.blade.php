@@ -1,11 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
 <div class="container">
+<div>
+		<h1>Lista de Produtos</h1>
+</div>
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Produto</th>
+				<th>Nome</th>
 				<th>Notas</th>
 				<th colspan="5">Estado</th>
 			</tr>
@@ -30,10 +36,11 @@
 			@endforeach
 		</tbody>
 	</table>
-
+{{$produtos->links()}}
 <div>
 	<a href="{{route('produtos.create')}}" class="btn btn-primary">Criar Produto</a>
 </div>
-</div>
+
 
 @endsection
+

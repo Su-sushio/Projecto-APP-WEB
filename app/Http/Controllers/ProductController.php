@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Product;
+use App\DataPoint;
 
 use Illuminate\Http\Eloquent\ModelRequest;
 
@@ -18,6 +19,7 @@ class ProductController extends Controller
         return view('produtos.index')->with('produtos',$product);
     }
    
+    
 
     public function create()
     {
