@@ -44,13 +44,22 @@
 			<tr>
 				<th>Nome</th>
 				<th>Tipo</th>
-			</tr>
+				<th  colspan ="3"></th>
+			</tr >
 		</thead>
 		<tbody>
 		@foreach($product->datapoints as $pontodedado)
 			<tr>
 				<td>{{$pontodedado['name']}}</td>
 				<td>{{$pontodedado['type']}}</td>
+				<td><a href="{{route('pontodedados.show', $pontodedado)}}" class="btn btn-primary">Ver</button></td>
+				<td><form method="POST" action="{{route('pontodedados.destroy', $pontodedado)}}"> 
+					@method('DELETE')
+					@csrf()
+					<button type="submit"
+					onclick="return confirm('Tem a certeza que pretende eliminar?')"
+					class="btn btn-primary btn-sm">Apagar</button>
+					</form></td>
 			</tr>
 		@endforeach
 		</tbody>

@@ -2,25 +2,23 @@
 
 @section('content')
 
-
-
+    
 <div class="container">
-	<h1>{{ $dados['name'] }}</h1>
+
+<h1>{{$datapoint['name'] }}</h1>
 
 	<form method="POST" >
 		@method('PUT')
 		@csrf()
 		<div class="form-group">
 			<label for="name">Nome</label>
-			<input type="text" name="name" 
-				   class="form-control"
-				   id="name" value="{{$dados['name']}}">
+			<textarea name="name" name="name"
+					class="form-control" id="name" >{{$datapoint['name']}}</textarea>   
 		</div>
 		<div class="form-group">
 			<label for="type">Tipo</label>
-			<input type="text" name="type" 
-				   class="form-control"
-				   id="type" value="{{$dados['type']}}>
+			<textarea name="type" name="type"
+					class="form-control" id="type" >{{$datapoint['type']}}</textarea>
 		</div>
 		
 		<div class="form-group">
@@ -28,5 +26,6 @@
 					class="btn btn-primary">Atualizar</button>
 		</div>
 	</form>
-    @endsection
-    
+</div>
+
+@endsection
