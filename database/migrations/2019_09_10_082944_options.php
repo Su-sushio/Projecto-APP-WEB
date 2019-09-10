@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DataPoint extends Migration
+class Options extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,19 @@ class DataPoint extends Migration
      */
     public function up()
     {
-        Schema::create('datapoint', function (Blueprint $table) {
+        Schema::create('options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->text('type');
+            $table->string('value');
+            $table->text('link');
+            $table->text('image');
+            $table->unsignedBigInteger('datapoint_id');
+            $table->foreign('datapoint_id')->references('id')->on('datapoint');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
-
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
@@ -31,6 +33,6 @@ class DataPoint extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('options');
     }
 }

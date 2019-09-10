@@ -33,7 +33,7 @@
 					class="btn btn-primary">Atualizar</button>
 		</div>
 	</form>
-</div>
+</div><br><br><br>
 
 <div class="container">
 <div>
@@ -67,7 +67,7 @@
 
 <div>
 	<a href="{{route('produtos.pontodedados.create',$product)}}" class="btn btn-primary">Criar Ponto de Dados</a>
-</div><br>
+</div><br><br><br><br>
 
 
 <div>
@@ -79,22 +79,44 @@
 		<thead>
 			<tr>
 			@foreach($product->datapoints as $pontodedado)
-				<td>{{$pontodedado['name']}}</td>
+				<th>{{$pontodedado['name']}}</th>
 			@endforeach
+				<th>Link</th>
+				<th>Fotos</th>
 			</tr >
 		</thead>
 		<tbody>
-		
+		<form method="POST" action="{{route('produtos.opcoes',$product)}}">
 			<tr>
 			@foreach($product->datapoints as $pontodedado)
-				<td></td>
+				<td>
+					<div class="form-group">
+						<input type="text" name="name" id="name" class="form-control">
+					</div>
+				</td>
 			@endforeach
+				<td>
+					<div class="form-group">
+						<input type="link" name="link" id="link" class="form-control">
+					</div>
+				</td>
+				<td>
+					<div class="form-group">
+						<input type="image" name="image" id="image" class="form-control">
+					</div>
+				</td>
 			</tr>
+			<tr>
+				<td>
+			<div>
+				<a href="" class="btn btn-primary">Criar Nova Opção</a>
+			</div>
+				</td>
+			</tr>
+		</form>		
 		</tbody>
 </table>
 </div>
-</div>
-<div>
-	<a href="" class="btn btn-primary">Criar Nova Opção</a>
-</div>
+
 @endsection
+
