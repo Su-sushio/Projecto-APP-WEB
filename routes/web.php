@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('produtos','ProductController');
 Route::resource('pontodedados','DataPointController');
+Route::resource('opcoes','OptionController');
 
 
 
