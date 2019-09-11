@@ -12,21 +12,25 @@ use Illuminate\Http\Request;;
 
 class DataPointController extends Controller
 {
+
+    public function index()
+    {
+        $opcao= DataPoint::paginate(10);
+        return view('opcoes.index')->with('opcoes',$opcao);
+    }
+
     public function store(Request $request,Product $product)
     {
        
        $opcoes = new Option();
        $opcoes->fill($request->all());
-       $opcoes->datapoint_id=$id;
-       $opcoes->product_id=$id;
+       $opcoes->datapoint_id=$datapoint->id;
+       $opcoes->product_id=$produto->id;
        $opcoes->save();
-       return redirect()->route('produtos.show',$product);
+       return redirect()->route('produtos.show',$products);
     }  
 
     
-
-
-
 
 }
 

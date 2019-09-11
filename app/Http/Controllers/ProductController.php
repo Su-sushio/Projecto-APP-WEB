@@ -33,6 +33,25 @@ class ProductController extends Controller
        $produto = new Product();
        $produto->fill($request->all());
        $produto->save();
+
+       $datapoint = new DataPoint();
+       $datapoint->name = "Nome/Marca";
+       $datapoint->type = "Texto";
+       $datapoint->product_id = $produto->id;
+       $datapoint->save();
+
+       $datapoint = new DataPoint();
+       $datapoint->name = "Preço";
+       $datapoint->type = "Decimal";
+       $datapoint->product_id = $produto->id;
+       $datapoint->save();
+
+       $datapoint = new DataPoint();
+       $datapoint->name = "Link";
+       $datapoint->type = "Texto";
+       $datapoint->product_id = $produto->id;
+       $datapoint->save();
+
        return redirect()->route('produtos.index');
        
     }

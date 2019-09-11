@@ -81,11 +81,14 @@
 			@foreach($product->datapoints as $pontodedado)
 				<th>{{$pontodedado['name']}}</th>
 			@endforeach
-				<th>Link</th>
-				<th>Fotos</th>
 			</tr >
 		</thead>
 		<tbody>
+			<tr> <!--Linha para gerar o index da tabela option-->
+			@foreach($product->datapoints as $opcao)
+			<td>{{$opcao['value']}}</td>
+			@endforeach
+			</tr>
 		<form method="POST" action="{{route('produtos.opcoes',$product)}}">
 			<tr>
 			@foreach($product->datapoints as $pontodedado)
@@ -95,22 +98,10 @@
 					</div>
 				</td>
 			@endforeach
-				<td>
-					<div class="form-group">
-						<input type="link" name="link" id="link" class="form-control">
-					</div>
-				</td>
-				<td>
-					<div class="form-group">
-						<input type="image" name="image" id="image" class="form-control">
-					</div>
-				</td>
 			</tr>
 			<tr>
 				<td>
-			<div>
 				<a href="" class="btn btn-primary">Criar Nova Opção</a>
-			</div>
 				</td>
 			</tr>
 		</form>		
