@@ -11,7 +11,7 @@ use Illuminate\Http\Request;;
 
 class DataPointController extends Controller
 {
-    public function index()
+    public function index()//função que permite mostrar a lista de ponto de dados no index.blade dos pontodedados 
     {
         $datapoint= DataPoint::paginate(10);
         return view('pontodedados.index')->with('pontodedados',$datapoint);
@@ -33,7 +33,7 @@ class DataPointController extends Controller
        return redirect()->route('produtos.show',$product);
     }
 
-    public function show(DataPoint $pontodedado)
+    public function show(DataPoint $pontodedado)//função que permite mostrar na vista show.blade a informação de um id existente na DB datapoint
     {
         return view('pontodedados.show')->with('datapoint', $pontodedado);
     }

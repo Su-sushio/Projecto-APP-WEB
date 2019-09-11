@@ -75,6 +75,8 @@
 <div>
 		<h1>Opções</h1>
 </div>
+		<form method="POST" action="{{route('produtos.opcoes',$product->id	)}}">
+		@csrf()
 <table class="table">
 		<thead>
 			<tr>
@@ -89,24 +91,23 @@
 			<td>{{$opcao['value']}}</td>
 			@endforeach
 			</tr>
-		<form method="POST" action="{{route('produtos.opcoes',$product)}}">
 			<tr>
 			@foreach($product->datapoints as $pontodedado)
 				<td>
 					<div class="form-group">
-						<input type="text" name="name" id="name" class="form-control">
+						<input type="text" name="{{$pontodedado->id}}" id="name" class="form-control">
 					</div>
 				</td>
 			@endforeach
 			</tr>
 			<tr>
 				<td>
-				<a href="" class="btn btn-primary">Criar Nova Opção</a>
+				<button type="submit" class="btn btn-primary">Criar Nova Opção</a>
 				</td>
 			</tr>
-		</form>		
 		</tbody>
 </table>
+		</form>
 </div>
 
 @endsection

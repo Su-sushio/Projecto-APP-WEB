@@ -28,7 +28,7 @@ Route::get('/produtos/{id}/pontodedados','DataPointController@create')->name('pr
 
 Route::post('/produtos/{id}/pontodedados','DataPointController@store')->name('produtos.pontodedados');
 
-Route::post('/produtos/{id}','OptionsController@store')->name('produtos.opcoes');
+Route::post('/produtos/{product}','OptionController@store')->name('produtos.opcoes');
 
 
 
