@@ -15,9 +15,11 @@ class OptionController extends Controller
 
     public function index()
     {
-        $option= Option::paginate(10);
+        $option= Option::orderBy('id')->get();
         return view('opcoes.index')->with('opcoes',$option);
+     
     }
+          
 
     public function store(Request $request, Product $product)//A variável produto serve aqui para ir buscar o Id dos produtos
     {

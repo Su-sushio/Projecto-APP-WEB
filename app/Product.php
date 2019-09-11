@@ -11,7 +11,12 @@ class Product extends Model
     ];
 
     public function  datapoints(){
-      return $this->hasMany('App\DataPoint');
+      return $this->hasMany('App\DataPoint')->orderBy('id');
+
+    }
+
+    public function  options(){
+      return $this->hasMany('App\Option')->orderBy('id');
 
     }
    

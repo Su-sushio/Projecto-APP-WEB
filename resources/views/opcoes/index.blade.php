@@ -2,6 +2,9 @@
 
 @section('content')
 
+{{$ref_ant = $opcoes[0]->referencia}}
+
+
 <div class="container">
     <div>
             <h1>Lista de Opções</h1>
@@ -9,15 +12,30 @@
 	<table class="table">
 		<thead>
 			<tr>
-            <th>Opções</th>
+            
             </tr>
 		</thead>
 		<tbody>
-			@foreach($opcoes as $opcao)
+			
 			<tr>
-				<td>{{$opcao['value']}}</td>
+            @foreach($opcoes as $opcao)
+
+                @if($opcao->referencia!=$ref_ant)
+
+                </tr><tr>
+
+                @endif
+
+               
+                @if($ref_ant = $opcao->referencia)
+
+                <td>{{$opcao['value']}}</td>
+               
+                @endif
+             
+            @endforeach
 			</tr>
-			@endforeach
+			
 		</tbody>
 	</table>
 </div>
