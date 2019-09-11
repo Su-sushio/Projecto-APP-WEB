@@ -31,5 +31,12 @@ Route::post('/produtos/{id}','OptionsController@store')->name('produtos.opcoes')
 
 
 
+Route::get('/utilizadores', 'UserController@index')->name('utilizadores')->middleware(['auth','admin']);
+
+Route::get('/notauth', function () {
+    return view('notauth');
+})->name('notauth');
+
+
 
 
