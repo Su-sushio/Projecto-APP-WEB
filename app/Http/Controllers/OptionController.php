@@ -7,7 +7,7 @@ use App\DataPoint;
 use App\Product;
 use Illuminate\Http\Eloquent\ModelRequest;
 
-use Illuminate\Http\Request;;
+use Illuminate\Http\Request;
 
 
 class OptionController extends Controller

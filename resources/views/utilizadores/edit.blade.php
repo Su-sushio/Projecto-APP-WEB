@@ -16,7 +16,7 @@
 			<label for="email">E-mail</label>
 			<textarea name="email"
 				   id="email" class="form-control"></textarea>
-
+		<br>
 		<button type="submit" class="btn btn-primary">Guardar Dados</button>
 	</form>
 
