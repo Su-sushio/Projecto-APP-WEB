@@ -21,8 +21,8 @@
 				@foreach($produtos as $produto)
 				<tr>
 					<td>{{$produto['name']}}</td>
-					<td>{{$produto['notes']}}</td>
-					<td>{{$produto['id']}}</td>
+					<td>{{$produto['notes']}}</td>	
+					<td></td>
 					<td>{{$produto['state']}}</td>
 					<td>
 						<div align="right">

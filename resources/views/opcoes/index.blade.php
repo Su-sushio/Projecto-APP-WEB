@@ -2,7 +2,12 @@
 
 @section('content')
 
-{{$ref_ant = $opcoes[0]->referencia}}
+
+
+ <!-- esta função serve para mostrar a lista das opções apesar de ainda não haver nenhuma criada  -->
+@if( sizeof($opcoes) )
+    {{$ref_ant = $opcoes[0]->referencia}}  
+@endif
 
 
 <div class="container">

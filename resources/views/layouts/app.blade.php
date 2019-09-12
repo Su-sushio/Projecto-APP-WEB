@@ -57,7 +57,7 @@
 
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="{{ route('utilizadores') }}"> Utilizadores </a>
+                                <a class="nav-link" href="{{ route('utilizadores.index') }}"> Utilizadores </a>
                         </li>
                         @guest
                             <li class="nav-item">

@@ -7,7 +7,7 @@ use App\DataPoint;
 use App\Product;
 use Illuminate\Http\Eloquent\ModelRequest;
 
-use Illuminate\Http\Request;;
+use Illuminate\Http\Request;
 
 
 class OptionController extends Controller
@@ -38,10 +38,28 @@ class OptionController extends Controller
        
        return redirect()->route('produtos.show', $product);
        
+
     }  
+
+    public function store_image(Request $request, Option $option)
+    {
+        $option = Option::find($id);
+        $path = $request->file('image')->store('imagens','public');//pasta onde vai ficar guardada a imagem
+
+        $image = new Image();
+        $image->path = 'storage/'.$path;
+        $image->option_id = $option->id;//indicar a relação da imagem com o id das options
+        $image->save();
+
+        //$image->images->add($image);
+        //$image->save();
+
+        return redirect()->route('produtos.show', ['product' => $product]);
+        //return redirect()->route('produtos.show')->with('product', $product);
+    }
+
 
    
 
-}
 
 
