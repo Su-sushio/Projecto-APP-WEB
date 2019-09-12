@@ -7,7 +7,7 @@ use App\DataPoint;
 use App\Product;
 use Illuminate\Http\Eloquent\ModelRequest;
 
-use Illuminate\Http\Request;;
+use Illuminate\Http\Request;
 
 
 class OptionController extends Controller
@@ -38,6 +38,7 @@ class OptionController extends Controller
        
        return redirect()->route('produtos.show', $product);
        
+
     }  
 
     public function store_image(Request $request, Option $option)
@@ -56,7 +57,8 @@ class OptionController extends Controller
         return redirect()->route('produtos.show', ['product' => $product]);
         //return redirect()->route('produtos.show')->with('product', $product);
     }
-}
+
+
    
 
 

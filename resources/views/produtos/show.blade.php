@@ -265,6 +265,6 @@ function myFunction() {
 
 
 
-
+Rota para submeter as fotos
 
 "{{ route('image.store', $opcao)}}"
