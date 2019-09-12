@@ -13,6 +13,7 @@
 				<tr>
 					<th>Nome</th>
 					<th>Notas</th>
+					<th>Nº Opções</th>
 					<th colspan="5">Estado</th>
 				</tr>
 			</thead>
@@ -21,6 +22,7 @@
 				<tr>
 					<td>{{$produto['name']}}</td>
 					<td>{{$produto['notes']}}</td>
+					<td></td>
 					<td>{{$produto['state']}}</td>
 					<td>
 						<div>

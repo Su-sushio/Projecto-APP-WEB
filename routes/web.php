@@ -30,6 +30,7 @@ Route::post('/produtos/{id}/pontodedados','DataPointController@store')->name('pr
 
 Route::post('/produtos/{product}','OptionController@store')->name('produtos.opcoes');
 
+Route::post('/produtos/{product}/image','OptionController@store_image')->name('image.store');
 
 
 

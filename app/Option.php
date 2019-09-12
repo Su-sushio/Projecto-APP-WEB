@@ -14,4 +14,11 @@ class Option extends Model
         "datapoint_id",
         "product_id"
     ];
+
+    
+    
+    public function images() {
+        return $this->hasMany('App\Image');
+    }
 }
+
