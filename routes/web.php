@@ -28,16 +28,13 @@ Route::get('/produtos/{id}/pontodedados','DataPointController@create')->name('pr
 
 Route::post('/produtos/{id}/pontodedados','DataPointController@store')->name('produtos.pontodedados');
 
-Route::post('/produtos/{id}','OptionsController@store')->name('produtos.opcoes');
+Route::post('/produtos/{id}','OptionController@store')->name('produtos.opcoes');
 
 
 
-Route::get('/utilizadores', 'UserController@index')->name('utilizadores')->middleware(['auth','admin']);
+Route::resource('utilizadores', 'UserController', ['parameters' => ['utilizadores' => 'utilizador']])->middleware(['auth','admin']);
+//Route::put('utilizadores/{utilizador}', 'UserController@update')->name('utilizadores.update')->middleware(['auth','admin']);
 
 Route::get('/notauth', function () {
     return view('notauth');
 })->name('notauth');
-
-
-
-

@@ -10,7 +10,7 @@ use Illuminate\Http\Eloquent\ModelRequest;
 use Illuminate\Http\Request;;
 
 
-class DataPointController extends Controller
+class OptionController extends Controller
 {
 
     public function index()
@@ -28,9 +28,7 @@ class DataPointController extends Controller
        $opcoes->product_id=$produto->id;
        $opcoes->save();
        return redirect()->route('produtos.show',$products);
-    }  
-
-    
+    }    
 
 }
 
