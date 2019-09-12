@@ -4,7 +4,6 @@
 
 <div class="container">
 	<h1> Editar Utilizador </h1>
-	{{$utilizador}}
 	<form method="POST" action="{{route('utilizadores.update', $utilizador)}}">
 		@csrf()
 		@method('PUT')
