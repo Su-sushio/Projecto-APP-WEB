@@ -14,18 +14,18 @@
 					<th>Nome</th>
 					<th>Notas</th>
 					<th>Nº Opções</th>
-					<th colspan="5">Estado</th>
+					<th colspan="3">Estado</th>
 				</tr>
 			</thead>
 			<tbody>
 				@foreach($produtos as $produto)
 				<tr>
 					<td>{{$produto['name']}}</td>
-					<td>{{$produto['notes']}}</td>
+					<td>{{$produto['notes']}}</td>	
 					<td></td>
 					<td>{{$produto['state']}}</td>
 					<td>
-						<div>
+						<div align="right">
 							<a href="{{route('produtos.show', $produto)}}" class="btn btn-primary btn-sm">Ver</a>
 						</div>
 					</td>
@@ -34,9 +34,11 @@
 							<form method="POST" action="{{route('produtos.destroy', $produto)}}"> 
 							@method('DELETE')
 							@csrf()
+							<div align="left">
 							<button type="submit"
 							onclick="return confirm('Tem a certeza que pretende eliminar este produto')"
 							class="btn btn-primary btn-sm">Apagar</button>
+							</div>
 							</form>
 						</div>
 					</td>
