@@ -15,9 +15,8 @@ class Options extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('value');
-            $table->text('link');
-            $table->text('image');
+            $table->bigIncrements('referencia');
+            $table->varchar('value');
             $table->unsignedBigInteger('datapoint_id');
             $table->foreign('datapoint_id')->references('id')->on('datapoint');
             $table->unsignedBigInteger('product_id');

@@ -11,7 +11,7 @@
 
 <div class="container">
 <div>
-		<h1>Produto</h1>
+		<h1>{{$product['name']}}</h1>
 </div>
 	
 	<form method="POST" >
@@ -59,7 +59,9 @@
 				<tr>
 					<td>{{$pontodedado['name']}}</td>
 					<td>{{$pontodedado['type']}}</td>
-					<td><a href="{{route('pontodedados.show', $pontodedado)}}" class="btn btn-primary">Ver</button></td>
+					<td>					
+					<a href="{{route('pontodedados.show', $pontodedado)}}" class="btn btn-primary">Ver</button>					
+					</td>
 					<td><form method="POST" action="{{route('pontodedados.destroy', $pontodedado)}}"> 
 						@method('DELETE')
 						@csrf()
@@ -84,59 +86,6 @@
 
 
 
-<div class="container">
-<div>
-		<h1>Opções</h1>
-</div>
-		<form method="POST" action="{{route('produtos.opcoes',$product->id	)}}">
-		@csrf()
-<table class="table">
-		<thead>
-			<tr>
-			<div>
-			@foreach($product->datapoints as $pontodedado)
-				<th>{{$pontodedado['name']}}</th>
-			@endforeach
-			</div>
-			<th>Imagens</th>
-			</tr >
-		</thead>
-		<tbody>
-			<tr> <!--Linha para gerar o index da tabela option-->
-			    @foreach($product->options as $opcao)
-						@if($opcao->referencia!=$ref_ant)
-							<td>
-
-							</td>
-						  
-							</tr><tr>
-						@endif  
-						<div>            
-						@if($ref_ant = $opcao->referencia)
-							<td>{{$opcao['value']}}</td>
-						@endif
-						</div>
-				@endforeach
-				          
-			</tr>
-			<tr>
-			@foreach($product->datapoints as $pontodedado)
-				<td>
-					<div class="form-group">
-						<input type="text" name="{{$pontodedado->id}}" id="name" class="form-control">
-					</div>
-				</td>
-			@endforeach
-			</tr>
-		</tbody>	
-</table>
-			<div>
-				<button onclick="myFunction()" type="submit" class="btn btn-primary">Criar Nova Opção</a>
-			</div>
-		</form>
-</div>
-
-
 
 
 <div class="container">
@@ -148,34 +97,45 @@
 		<form method="POST" action="{{route('produtos.opcoes',$product->id	)}}">
 		@csrf()
 <table class="table">
-		<thead>
+		<thead>		
 			<tr>
 			<div>
 			@foreach($product->datapoints as $pontodedado)
-				<th>{{$pontodedado['name']}}</th>
-			@endforeach
+				<th>{{$pontodedado['name']}}</th>			
+			@endforeach				
 			</div>
-			<th>Imagens</th>
-			</tr >
+			<th>Data</th>			
+			</tr>
 		</thead>
 		<tbody>
+			@if( sizeof($product->options) )
 			<tr> <!--Linha para gerar o index da tabela option-->
 			    @foreach($product->options as $opcao)
 						@if($opcao->referencia!=$ref_ant)
-							<td>
-
-							</td>
-						  
-							</tr><tr>
-						@endif  
-						<div>            
-						@if($ref_ant = $opcao->referencia)
-							<td>{{$opcao['value']}}</td>
-						@endif
-						</div>
-				@endforeach
-				          
+						<td class="data">
+							{{ date('Y-m-d', strtotime($opcao['created_at'])) }}
+						</td>						
+						<td>
+							<a href="{{route('imagens.show',$opcao)}}" class="btn btn-primary">Ver</button>
+						</td>							
 			</tr>
+			<tr></tr>
+						@endif
+						<div>				           
+						@if($ref_ant = $opcao->referencia)
+							<td>{{$opcao['value']}}</td>											
+						@endif											
+				@endforeach
+						<td class="data">
+						{{ date('Y-m-d', strtotime($opcao['created_at'])) }}						
+						</td>
+						<td>
+							<a href="{{route('imagens.show',$opcao)}}" class="btn btn-primary">Ver</button>		
+						</td>
+						</div>									          
+			</tr>
+			@endif
+
 			<tr>
 			@foreach($product->datapoints as $pontodedado)
 				<td>
@@ -191,59 +151,65 @@
 				<button onclick="myFunction()" type="submit" class="btn btn-primary">Criar Nova Opção</a>
 			</div>
 		</form>
-</div></td><td><div class="container">
-<div>
-		<h1>Opções</h1>
 </div>
-		<form method="POST" action="{{route('produtos.opcoes',$product->id	)}}">
-		@csrf()
+<td>
+
+@if(  sizeof($product->options) )
+
+
+<div class="container">		
 <table class="table">
 		<thead>
-			<tr>
-			<div>
-			@foreach($product->datapoints as $pontodedado)
-				<th>{{$pontodedado['name']}}</th>
-			@endforeach
-			</div>
-			<th>Imagens</th>
-			</tr >
+			<tr>			
+			<th colspan="2">IMAGENS</th>
+			</tr>
 		</thead>
 		<tbody>
 			<tr> <!--Linha para gerar o index da tabela option-->
 			    @foreach($product->options as $opcao)
-						@if($opcao->referencia!=$ref_ant)
+						@if($opcao->referencia!=$ref_ant)											  
+							</tr>							
 							<td>
-
+							<form method="POST" action="{{route('image.store', $opcao)}}" enctype="multipart/form-data" style="display:inline-flex;">
+								@csrf()
+								<div class="custom-file">
+									<input type="file" class="custom-file-input" id="image" name="image">
+									<label class="custom-file-label" for="image" >ficheiro</label>
+								</div>
+								<button type="submit" class="btn btn-primary mb-2">Upload</button>
+							</form>
 							</td>
-						  
-							</tr><tr>
+							<tr>
 						@endif  
 						<div>            
-						@if($ref_ant = $opcao->referencia)
-							<td>{{$opcao['value']}}</td>
+						@if($ref_ant = $opcao->referencia)									
 						@endif
 						</div>
 				@endforeach
-				          
+						<td>
+						<form method="POST" action="{{route('image.store',$opcao)}}" enctype="multipart/form-data" style="display:inline-flex;">
+								@csrf()
+								<div class="custom-file">
+									<input type="file" class="" id="image" name="image">
+									<label class="custom-file-label" for="image" >ficheiro</label>
+								</div>
+								<button type="submit" class="btn btn-primary mb-2">Upload</button>
+							</form>
+						</td>  
 			</tr>
-			<tr>
-			@foreach($product->datapoints as $pontodedado)
-				<td>
-					<div class="form-group">
-						<input type="text" name="{{$pontodedado->id}}" id="name" class="form-control">
-					</div>
-				</td>
-			@endforeach
-			</tr>
+			
 		</tbody>	
 </table>
-			<div>
-				<button onclick="myFunction()" type="submit" class="btn btn-primary">Criar Nova Opção</a>
-			</div>
-		</form>
-</div></td>
+</div>
+
+@endif
+
+</td>
 	</table>
 </div>
+
+</div>
+
 
 @endsection
 
@@ -265,6 +231,7 @@ function myFunction() {
 
 
 
-Rota para submeter as fotos
 
-"{{ route('image.store', $opcao)}}"
+
+
+

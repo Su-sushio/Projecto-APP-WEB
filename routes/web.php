@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('produtos','ProductController');
 Route::resource('pontodedados','DataPointController');
 Route::resource('opcoes','OptionController');
+route::resource('imagens','ImageController');
 
 
 
@@ -29,8 +30,8 @@ Route::get('/produtos/{id}/pontodedados','DataPointController@create')->name('pr
 Route::post('/produtos/{id}/pontodedados','DataPointController@store')->name('produtos.pontodedados');
 
 
-Route::post('/produtos/{product}/image','OptionController@store_image')->name('image.store');
-Route::post('/produtos/{id}','OptionController@store')->name('produtos.opcoes');
+Route::post('/produtos/{option}/image','OptionController@store_image')->name('image.store');
+
 Route::post('/produtos/{product}','OptionController@store')->name('produtos.opcoes');
 
 
