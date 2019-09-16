@@ -123,7 +123,7 @@
 						@endif
 						<div>				           
 						@if($ref_ant = $opcao->referencia)
-							<td>{{$opcao['value']}}</td>											
+							<td>{{$opcao['value']}}</td>																		
 						@endif											
 				@endforeach
 						<td class="data">

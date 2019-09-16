@@ -22,7 +22,7 @@
 				<tr>
 					<td>{{$produto['name']}}</td>
 					<td>{{$produto['notes']}}</td>	
-					<td></td>
+					<td>{{count($produto['options'])}}</td>
 					<td>{{$produto['state']}}</td>
 					<td>
 						<div align="right">

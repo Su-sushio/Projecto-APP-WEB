@@ -34,7 +34,7 @@
                
                 @if($ref_ant = $opcao->referencia)
 
-                <td></td>
+                <td>{{$opcao['value']}}</td>
                
                 @endif
              
