@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Images extends Migration
+class Inimigos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class Images extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
+        Schema::create('inimigo', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('path');
-            $table->bigInteger('option_id');
-            $table->foreign('option_id')->references('options')->on('id');
+            $table->nome('varchar');
+            $table->tipo_inimigo('set');
             $table->timestamps();
         });
     }
@@ -29,6 +28,7 @@ class Images extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('inimigo');
     }
 }
+

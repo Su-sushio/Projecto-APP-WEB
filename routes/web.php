@@ -11,28 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {//Esta route permite devolver a view welcome, automaticamente ele reconhece como sendo welcome.blade.php
+    return view('welcome');  
 });
+
 
 Auth::routes();
 
+Route::get('/pass_value/{value}','Controller@pass_value');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('produtos','ProductController');
-Route::resource('pontodedados','DataPointController');
-Route::resource('opcoes','OptionController');
-route::resource('imagens','ImageController');
+Route::resource('inimigos','InimigoController');
+Route::resource('culturas','CulturaController');
+Route::resource('variedades','VariedadeController');
+Route::resource('adubos','AduboController');
+Route::resource('empresas','EmpresaController');
 
 
-
-Route::get('/produtos/{id}/pontodedados','DataPointController@create')->name('produtos.pontodedados.create');
-
-Route::post('/produtos/{id}/pontodedados','DataPointController@store')->name('produtos.pontodedados');
+Route::get('/culturas/{id}/inimigos','VariedadeController@show')->name('culturas.inimigos');
 
 
-Route::post('/produtos/{option}/image','OptionController@store_image')->name('image.store');
-
-Route::post('/produtos/{product}','OptionController@store')->name('produtos.opcoes');
 
 
 

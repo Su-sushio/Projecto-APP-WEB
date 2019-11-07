@@ -1,0 +1,33 @@
+<div class="row"> 
+    <form method="POST" action="{{route('adubos.store')}}">
+    @csrf()
+        <div class="col-md-2">
+            <input type="text" name="nome_comercial" class="form-control">
+        </div>
+        <div class="col-md-2">
+            <select name="distribuidor_id" class="form-control">
+                @foreach($empresas as $empresa)
+                <option value="{{$empresa['id']}}">{{$empresa['nome']}}</option>
+                @endforeach
+            </select>
+        </div> 
+        <div class="col-md-2">
+            <input type="text" name="tipo_produtp" class="form-control">
+        <div class="col-md-2"> 
+            <select name="formulacao" class="form-control">
+                <option value="líquido">Líquido</option>
+                <option value="pó">Pó</option>
+                <option value="grânulos">Grânulos</option>
+                <option value="cristais solúveis">Cristais solúveis</option>
+                <option value="gel">Gel</option>
+                <option value="outro">Outro</option>
+            <select>
+        </div>
+        <div class="col-md-2">    
+            <input type="text" name="modo_accao" class="form-control">
+        </div>
+        <div class="col-md-2">    
+            <button type="submit" class="btn btn-primary">Novo Registo</a>
+        </div>
+    </form>
+  </div> 

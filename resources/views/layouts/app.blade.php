@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>»»» CHECK.IT «««</title>
+    <title>»»» Toscan «««</title>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha256-YLGeXaapI0/5IgZopewRJcFXomhRMlYYjugPLSyNjTY=" crossorigin="anonymous" />
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">foi retirado--> 
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    »»» CHECK.IT «««
+                   <div><img src="/png/logo.png" style="max-height: 25px;"></div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -36,18 +36,19 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="/produtos">Produtos</a>
+                    <ul class="navbar-nav mr-auto">                            
+                           
+                            <li class="nav-item">
+                                <a class="nav-link" href="/variedades">Culturas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/produtos/create">Novo Produto</a>
+                                <a class="nav-link" href="/inimigos">Inimigos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/pontodedados">Ponto de Dados</a>
+                                <a class="nav-link" href="/empresas">Empresas</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/opcoes">Opções</a>
+                                <a class="nav-link" href="/adubos">Fertilizantes</a>
                             </li>
                     </ul>
 

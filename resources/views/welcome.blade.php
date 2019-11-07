@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    »»» CHECK.IT «««
+                Toscan
                 </div>
 
                 <div class="links">
